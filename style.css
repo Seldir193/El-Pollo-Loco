@@ -1,0 +1,405 @@
+@font-face {
+    font-family: 'zabars';
+    src: URL('fonts/zabars.ttf') format('truetype');
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(img/backpic.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'zabars', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+}
+
+h1 {
+    font-size: 64px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0, 0.4);
+    background: linear-gradient(to top, white 70%, transparent 100%, transparent 80%);
+    background-clip: text;
+    -webkit-text-fill-color: #0000;
+}
+
+.container{
+    height: 480px;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+}
+
+.d-none {
+    display: none;
+}
+
+.startscreen {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 480px;
+    width: 720px;
+    object-fit: cover;
+}
+
+.play-btn {
+    position: relative;
+    background: linear-gradient(to top, white 10%, transparent 80%, transparent 80%);
+    background-image: linear-gradient(to bottom,red,white,yellow);
+    border: 1px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 0px #3e3e3e;
+    padding: 15px 50px;
+    color: black;
+    display: flex;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    top: -95%;
+    left: 35%;
+    transition: 100ms;
+}
+
+.play-btn:hover {
+    cursor: pointer;
+}
+
+.endscreen {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 480px;
+    width: 720px;
+    background-image: url(img/5_background/second_half_background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#restart {
+    left: 10%;
+}
+
+#home {
+    left: 80%;
+}
+
+.end-btn {
+    position: relative;
+    width: 32px;
+    padding: 9px 17px;
+    background-color: #FFA500;
+    border-radius: 16px;
+    top: -95%;
+    transform: translate(-50%);
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.width {
+    width: 720px;
+}
+
+footer {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 26px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    padding-bottom: 30px;
+    background-color: #FFA500;
+    width: 720px;
+}
+
+#play-speaker {
+    background-image: url(img/on-sound.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+}
+
+.footline:hover {
+    filter: invert(90%) sepia(96%) saturate(6682%) hue-rotate(310deg) brightness(97%) contrast(99%);
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.menu {
+    display: flex;
+    gap: 8px;
+}
+
+#game{
+    width: 32px;
+    height: 32px;
+}
+
+#game1{
+    width: 32px;
+    height: 32px;
+}
+
+#mobile-keyboard  {
+    gap: 250px;
+}
+
+.mobile-btn  {
+    display: flex;
+    gap: 15px;
+}
+
+#go-right {
+    width: 32px;
+}
+
+#go-jump {
+    width: 32px;
+}
+
+#go-throw {
+    width: 32px;
+}
+
+#go-left {
+    width: 32px; 
+}
+
+.d-flex {
+    display: flex;
+}
+
+.fullscreen {
+    cursor: pointer;
+    width: 32px;
+}
+
+#fullscreen {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 480px;
+    width: 720px;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    background-color: #FFA500;
+    position: absolute;
+    height: 220px;
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 8px solid #f6bb60;
+    border-radius: 18px;
+    box-shadow: 0px 0px 12px 8px rgb(153 68 9);
+    padding: 24px 0;
+}
+
+.close {
+    font-size: 16px;
+    font-family: 'arial';
+    border-radius: 100%;
+    border: 3px solid;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    padding: 4px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.close:hover {
+    transition: 300ms;
+    box-shadow: 0px 0px 8px 2px #bd722a;
+    text-shadow: 0px 0px 4px;
+}
+
+.close-info {
+    right: 24px;
+    top: 24px;
+    color: #bd722a;
+}
+
+.close-info:hover {
+    color: #ab6726
+}
+
+table img  {
+    width: 32px;
+    height: 32px;
+    display:block;
+}
+
+table {
+    width:100px;
+}
+
+table th,tr {
+    font-size:32px;
+}
+
+h2 {
+    font-size: 64px;
+    margin-top: 0;
+}
+
+.info {
+    background-color: #f6bb60 !important;
+    border: 0px !important;
+    box-shadow: 0px 0px 17px 8px #994409 inset !important;
+    height: calc(100% - 48px);
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
+.impressum {
+    font-family: 'roboto';
+    font-size: 24px;
+    overflow-y: auto;
+    padding: 16px 48px;
+    margin: 40px 16px 0 0;
+}
+
+.rotate {
+    display: none;
+    width: 100%;
+}
+
+.device {
+    font-size: 56px;
+    text-align: center;
+    margin:0;
+}
+
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    #mobile-keyboard {
+        display: flex;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .rotate {
+        display: block;
+    }
+
+    #fullscreen {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    h1 {
+        display: none;
+    }
+
+    .play-btn {
+        padding: 8px 24px;
+        font-size: 24px;
+        left:40%;
+    }
+
+    canvas {
+        height: 90vh !important;
+        width: 100vw;
+    }
+
+    .responsive {
+        height: 100vh !important;
+        width: 100vw;
+    }
+
+    .startscreen {
+        border-top-left-radius: unset; 
+        border-top-right-radius: unset;
+    }
+
+    .endscreen {
+        border-top-left-radius: unset; 
+        border-top-right-radius: unset;
+    }
+
+    .container {
+        border-top-left-radius: unset; 
+        border-top-right-radius: unset; 
+    }
+
+    .container .width {
+        display: none;
+    }
+
+    footer {
+        height: 10vh;
+        width: 100%;
+        padding: 0;
+        border-bottom-left-radius: unset;
+        border-bottom-right-radius: unset;
+    }
+       
+    .fullscreen {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    #fullscreen{
+        margin:auto;
+    }
+
+    #home {
+        left: 76%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

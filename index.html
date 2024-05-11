@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/6_salsa_bottle/2_salsa_bottle_on_ground.png">
+    <title>Document</title>
+
+    <script src="js/sound.js"></script>
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/chicks.class.js"></script>
+    <script src="models/cloud.class.js"></script>
+    <script src="models/bottle-bar.class.js"></script>
+    <script src="models/status-bar.class.js"></script>
+    <script src="models/coin-bar.class.js"></script>
+    <script src="models/endboss-bar.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/background-object.class.js"></script>
+    <script src="models/coin.class.js"></script>
+    <script src="models/bottle.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/throwable-object.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body onload="initBody()">
+
+<div id="fullscreen">
+    <h1>El pollo loco</h1>
+
+    <div id="start" class="container responsive">
+        <section id="joystick" class="d-none overlay responsive">
+            <section class="section">
+                <p onclick="closeJoystick()" class="close center">X</p>
+                <table>
+                    <tr>
+                        <th><img src="img/right-long.svg"></th>
+                        <th>Right</th>
+                    </tr>
+                    <tr>
+                        <td><img src="img/left-long.svg"></td>
+                        <td>Left</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th><img src="img/up.svg"></th>
+                        <th>Jump</th>
+                    </tr>
+                    <tr>
+                        <td><img src="img/d-throw.svg"></td>
+                        <td>Throw</td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+
+        <section id="policy" class="d-none end overlay responsive">
+            <section class="section info">
+                <p onclick="closePolicy()" class="close close-info center">X</p>
+                <div class="impressum">
+                    <h2>Impressum</h2>
+                    <p>Angaben gemäß § 5 TMG</p>
+                    <p>Selcuk Kocyigit<br>
+                        Hochfelder Str.33<br>
+                        47226 Duisburg<br>
+                    </p>
+                    <p> <strong>Vertreten durch: </strong><br></p>
+                    <p>Developer Akademie GmbH <br>
+                        Tassiloplatz 25 <br>
+                        81541 München<br>
+                    </p>
+                    <p><strong>Haftungsausschluss: </strong><br><br><strong>Haftung für Links</strong><br><br>
+                        Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen
+                        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+                        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
+                        Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf
+                        mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung
+                        nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
+                        konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von
+                        Rechtsverletzungen werden wir derartige Links umgehend
+                        entfernen.<br><br><strong>Urheberrecht</strong><br><br>
+                        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+                        deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+                        Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung
+                        des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den
+                        privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht
+                        vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere
+                        werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
+                        Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei
+                        Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+                    <br>
+                    Website Impressum von <a href="https://www.impressum-generator.de">impressum-generator.de</a>
+                    <br>
+                    Hintergrundbild von <a
+                        href="https://pixabay.com/de/users/sketch1999-15613978/">Sketch1999
+                    </a>auf<a
+                        href="https://pixabay.com/de/illustrations/w%C3%BCste-orange-natur-sand-hei%C3%9F-5385998/">Pixabay</a><br>
+                    <a href="https://fontawesome.com/icons/maximize?f=classic&s=solid"
+                        title="vollbildschirm Icons">Vollbildschirm Icons erstellt von - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/circle-arrow-left?f=classic&s=solid" title="ui Icons">Ui Icons erstellt von
+                         - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/circle-arrow-up?f=classic&s=solid"
+                        title="vorwärts-taste Icons">Vorwärts-taste Icons erstellt von - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/d?f=classic&s=solid"
+                        title="tastaturbefehl Icons">Tastaturbefehl Icons erstellt von  -
+                        fontwesome</a><br>
+                    <a href="https://fontawesome.com/icons/circle-arrow-right?f=classic&s=solid" title="pfeil Icons">Pfeil Icons
+                        erstellt von - fontwesome</a><br>
+                    <a href="https://fontawesome.com/icons/volume-xmark?f=classic&s=solid" title="stumm Icons">Stumm Icons
+                        erstellt von - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/volume-high?f=classic&s=solid" title="klang Icons">Klang Icons
+                        erstellt von - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/book-open?f=classic&s=solid" title="buch Icons">Buch Icons
+                        erstellt von - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/circle-info?f=classic&s=solid" title="info Icons">Die info
+                        Icons erstellt von - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/power-off?f=classic&s=solid" title="neu start Icons">Neu
+                        starten Icons erstellt von  - fontawesome</a><br>
+                    <a href="https://fontawesome.com/icons/house?f=classic&s=solid" title="home Icons">Zuhause
+                        Icons erstellt von House - fontawesome</a><br>
+                </div>
+            </section>
+        </section>
+
+        <img class="startscreen responsive" src="img/9_intro_outro_screens/start/startscreen_1.png">
+        <button onclick="initGame()" class="play-btn">Play Game</button>
+    </div>
+
+    <div  id="game-over" class="container width responsive" style="display: none">
+        <img class="endscreen responsive" src="img/9_intro_outro_screens/game_over/game over.png">
+        <img onclick="restart()" id="restart" class="end-btn" src="img/restart.svg">
+        <img onclick="home()" id="home" class="end-btn" src="img/home.svg">
+    </div>
+
+    <div id="you-lost" class="container width responsive" style="display: none">
+        <img class="endscreen responsive" src="img/9_intro_outro_screens/game_over/you lost.png">
+        <img onclick="restart()" id="restart" class="end-btn" src="img/restart.svg">
+        <img onclick="home()" id="home" class="end-btn" src="img/home.svg">
+    </div>
+
+    <canvas id="canvas" class="container" style="display: none;" width="720" height="480"></canvas>
+
+    <footer>
+        <div onclick="mute()" id="play-speaker" class="footline"></div>
+        <img onclick="joystickInfo()" id="game" class="menu footline hover" src="img/book.svg">
+        <img onclick="policy()" id="game1" class="menu footline hover" src="img/info.svg">
+
+        <div id="mobile-keyboard" class="d-none">
+            <div class="mobile-btn">
+                <img class="footline" id="go-left" src="img/left.svg">
+                <img class="footline" id="go-right" src="img/right.svg">
+            </div>
+
+
+            <div class="mobile-btn">
+                <img class="footline" id="go-jump" src="img/up.svg">
+                <img class="footline" id="go-throw" src="img/throw.svg">
+            </div>
+        </div>
+
+        <img onclick="fullscreen()" id="open-fullscreen" src="img/open-fullscreen.svg" class="fullscreen footline hover">
+        <img onclick="closefullscreen()" id="close-fullscreen" src="img/close-fullscreen.svg " class="fullscreen footline hover d-none">
+
+        </footer>
+</div> 
+    
+    <div class="rotate">
+        <img src="img/rotate-solid.svg" class="rotate">
+        <p class="device">Turn your Device to play</p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
